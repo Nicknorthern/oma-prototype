@@ -20,6 +20,7 @@ struct TabBarContainerView<Content: View>: View {
         VStack(spacing: 0) {
             // メインコンテンツエリア
             content
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             // フッターメニュー
             BottomTabBar(selectedTab: $selectedTab)
@@ -72,7 +73,7 @@ struct BottomTabBar: View {
             )
             
             TabButton(
-                icon: "message.fill",
+                icon: "questionmark.circle.fill",
                 customImageName: nil,
                 title: "お問合せ",
                 badge: 3,

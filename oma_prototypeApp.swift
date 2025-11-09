@@ -11,7 +11,7 @@ import SwiftUI
 struct oma_prototypeApp: App {
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            MainTabView()
         }
     }
 }

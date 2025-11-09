@@ -37,9 +37,12 @@ struct InquiryView: View {
                                 .background(Color(red: 0.9, green: 0.9, blue: 0.9))
                         }
                     }
+                    .frame(maxWidth: .infinity)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.white)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
@@ -76,26 +79,13 @@ struct InquiryRowView: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text(inquiry.companyName)
-                    .font(.system(size: 12))
-                    .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
-                
-                Text(inquiry.ownerName)
-                    .font(.system(size: 12))
-                    .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
-                
-                Text(inquiry.messagePreview)
+                Text(inquiry.description)
                     .font(.system(size: 12))
                     .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
                     .lineLimit(1)
             }
             
             Spacer()
-            
-            // 右側の日付
-            Text(inquiry.date)
-                .font(.system(size: 12))
-                .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
