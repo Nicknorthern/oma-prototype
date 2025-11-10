@@ -12,9 +12,41 @@ struct InquiryChatView: View {
     @State private var messages: [InquiryMessage] = []
     @State private var messageText = ""
     @State private var canPost = true
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(spacing: 0) {
+            // カスタムヘッダー（黒背景、白文字、バックボタン）
+            ZStack {
+                // 中央のタイトルと問い合わせ番号
+                VStack(spacing: 2) {
+                    Text(topic.title)
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundColor(.white)
+                        .lineLimit(1)
+                    
+                    Text(topic.formattedInquiryNumber)
+                        .font(.system(size: 13, weight: .regular))
+                        .foregroundColor(.white)
+                }
+                
+                // 左側のバックボタン
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                    }
+                    .padding(.leading, 16)
+                    
+                    Spacer()
+                }
+            }
+            .padding(.vertical, 12)
+            .background(Color.black)
+            
             // メッセージリスト
             ScrollView {
                 VStack(spacing: 16) {
@@ -74,7 +106,7 @@ struct InquiryChatView: View {
                 .background(Color.white)
             }
         }
-        .navigationBarTitle(topic.title, displayMode: .inline)
+        .navigationBarHidden(true)
         .onAppear {
             loadMessages()
             canPost = !topic.isClosed
