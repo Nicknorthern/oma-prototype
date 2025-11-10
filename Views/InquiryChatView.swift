@@ -65,7 +65,7 @@ struct InquiryChatView: View {
             if topic.isClosed {
                 // クローズ済みの場合
                 HStack {
-                    Text("このトピックはクローズされています。参照のみ可能です。")
+                    Text("このトピックは解決済みです。参照のみ可能です。")
                         .font(.system(size: 12))
                         .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
                         .padding(.horizontal, 16)
@@ -98,7 +98,7 @@ struct InquiryChatView: View {
                 Button(action: {
                     // クローズリクエスト処理
                 }) {
-                    Text("クローズしてもいいです")
+                    Text("解決済みに同意する")
                         .font(.system(size: 14))
                         .foregroundColor(Color(red: 0.87, green: 0.25, blue: 0.18))
                         .padding(.vertical, 8)
