@@ -58,27 +58,12 @@ struct InquiryRowView: View {
     let inquiryContact: InquiryContact
     
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .top, spacing: 4) {
             // 左側のアイコン
-            ZStack {
-                Circle()
-                    .fill(Color.white)
-                    .frame(width: 48, height: 48)
-                    .overlay(
-                        Circle()
-                            .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 1)
-                    )
-                
-                VStack(spacing: 2) {
-                    Image(systemName: "building.2")
-                        .font(.system(size: 16))
-                        .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
-                    Text("東京不動産")
-                        .font(.system(size: 8))
-                        .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
-                }
-            }
-            .frame(width: 48, height: 48)
+            Image(systemName: "questionmark.circle.fill")
+                .font(.system(size: 24))
+                .foregroundColor(Color.WPBlue._700)
+                .frame(width: 32, alignment: .leading)
             
             // 中央のテキスト情報
             VStack(alignment: .leading, spacing: 4) {
