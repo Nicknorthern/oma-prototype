@@ -8,11 +8,11 @@
 import Foundation
 
 struct InquiryTopics {
-    // サンプルデータ: 最初のInquiryContactItem（売買契約の内容にかかわること）に関連するトピック
-    // 実際の実装では、inquiryIdでフィルタリングします
+    // サンプルデータ: 最初のInquiryContact（売買契約の内容にかかわること）に関連するトピック
+    // 実際の実装では、inquiryContactIdでフィルタリングします
     static let sampleTopics: [InquiryTopic] = [
         InquiryTopic(
-            inquiryId: UUID(), // 実際にはInquiryContactItemのIDと一致させる
+            inquiryContactId: 1, // 実際にはInquiryContactのIDと一致させる
             inquiryNumber: 1,
             title: "契約書の内容について確認したい",
             createdAt: "2025年11月1日 10:30",
@@ -22,7 +22,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月1日 14:20"
         ),
         InquiryTopic(
-            inquiryId: UUID(),
+            inquiryContactId: 1,
             inquiryNumber: 2,
             title: "手付金の返還について",
             createdAt: "2025年10月25日 09:15",
@@ -32,7 +32,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年10月28日 16:45"
         ),
         InquiryTopic(
-            inquiryId: UUID(),
+            inquiryContactId: 1,
             inquiryNumber: 3,
             title: "契約解除の条件について",
             createdAt: "2025年10月20日 11:00",
@@ -43,9 +43,9 @@ struct InquiryTopics {
         )
     ]
     
-    // inquiryIdでトピックを取得する関数
-    static func topics(for inquiryId: UUID) -> [InquiryTopic] {
-        return sampleTopics.filter { $0.inquiryId == inquiryId }
+    // inquiryContactIdでトピックを取得する関数
+    static func topics(for inquiryContactId: Int) -> [InquiryTopic] {
+        return sampleTopics.filter { $0.inquiryContactId == inquiryContactId }
     }
 }
 

@@ -14,7 +14,7 @@ enum TopicFilter: String, CaseIterable {
 }
 
 struct InquiryTopicListView: View {
-    let inquiryContact: InquiryContactItem
+    let inquiryContact: InquiryContact
     @State private var selectedFilter: TopicFilter = .all
     @State private var topics: [InquiryTopic] = []
     @State private var showingNewTopicSheet = false
@@ -112,9 +112,9 @@ struct InquiryTopicListView: View {
         // 実際の実装では、inquiryContact.idでトピックを取得
         // サンプルデータを使用（すべてのトピックを表示）
         topics = InquiryTopics.sampleTopics.map { topic in
-            // inquiryIdを現在のinquiryContact.idに設定
+            // inquiryContactIdを現在のinquiryContact.idに設定
             InquiryTopic(
-                inquiryId: inquiryContact.id,
+                inquiryContactId: inquiryContact.id,
                 inquiryNumber: topic.inquiryNumber,
                 title: topic.title,
                 createdAt: topic.createdAt,
@@ -180,7 +180,7 @@ struct InquiryTopicRowView: View {
 }
 
 struct NewTopicView: View {
-    let inquiry: InquiryContactItem // パラメータ名はinquiryのまま（Swiftの命名規則に従う）
+    let inquiry: InquiryContact // パラメータ名はinquiryのまま（Swiftの命名規則に従う）
     @Environment(\.presentationMode) var presentationMode
     @State private var messageText = ""
     var onTopicCreated: ((InquiryTopic) -> Void)?
@@ -210,7 +210,7 @@ struct NewTopicView: View {
                     let now = formatter.string(from: Date())
                     
                     let newTopic = InquiryTopic(
-                        inquiryId: inquiry.id, // NewTopicViewのパラメータ名はinquiry
+                        inquiryContactId: inquiry.id, // NewTopicViewのパラメータ名はinquiry
                         inquiryNumber: inquiryNumber,
                         title: messageText.isEmpty ? "新しい問い合わせ" : String(messageText.prefix(50)),
                         createdAt: now,

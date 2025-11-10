@@ -76,7 +76,7 @@ struct ChatTopicsContent: View {
 }
 
 struct InquiryContent: View {
-    let inquiries: [InquiryContactItem] = InquiryContacts.items
+    let inquiries: [InquiryContact] = InquiryContacts.items
     
     var body: some View {
         VStack(spacing: 0) {

@@ -108,7 +108,7 @@ struct SectionHeaderView: View {
 }
 
 struct ActivityRowView: View {
-    let item: ActivityItem
+    let item: Activity
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {

@@ -10,8 +10,8 @@ import SwiftUI
 struct InquiryContactListView: View {
     @Binding var selectedTab: Int // 親から渡されるselectedTab
     
-    // サンプルデータ
-    let inquiryContacts: [InquiryContactItem] = InquiryContacts.items
+    // サンプルデータ（displayOrderの昇順でソート）
+    let inquiryContacts: [InquiryContact] = InquiryContacts.items.sorted { $0.displayOrder < $1.displayOrder }
     
     init(selectedTab: Binding<Int>) {
         self._selectedTab = selectedTab
@@ -55,7 +55,7 @@ struct InquiryContactListView: View {
 }
 
 struct InquiryRowView: View {
-    let inquiryContact: InquiryContactItem
+    let inquiryContact: InquiryContact
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {

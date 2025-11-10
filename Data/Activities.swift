@@ -8,9 +8,9 @@
 import Foundation
 
 struct Activities {
-    static let items: [ActivityItem] = [
+    static let items: [Activity] = [
         // 確認・回答が必要
-        ActivityItem(
+        Activity(
             status: .unanswered,
             title: "【承諾依頼】退去のお知らせと募集条件のご提案（部屋）",
             propertyName: "下志津アパートメント",
@@ -19,7 +19,7 @@ struct Activities {
             date: "11:10",
             hasUnreadDot: true
         ),
-        ActivityItem(
+        Activity(
             status: .unconfirmed,
             title: "工事完了報告",
             propertyName: "デイズハイツ吉野川",
@@ -28,7 +28,7 @@ struct Activities {
             date: "9:13",
             hasUnreadDot: true
         ),
-        ActivityItem(
+        Activity(
             status: .reportUnread,
             title: "収支報告書",
             propertyName: "プレステージ松阪",
@@ -37,7 +37,7 @@ struct Activities {
             date: "8月13日",
             hasUnreadDot: true
         ),
-        ActivityItem(
+        Activity(
             status: .reproposalUnanswered,
             title: "退室リフォーム工事見積書※お立会い有",
             propertyName: "ベルパーク常盤",
@@ -47,7 +47,7 @@ struct Activities {
             hasUnreadDot: true
         ),
         // 確認・回答済み他
-        ActivityItem(
+        Activity(
             status: .answeredYes,
             title: "アクティビティテンプレート名 | 要件のタイトルアクティビティテンプレート名",
             propertyName: "物件名物件名物件名物件名物件名物件名物件名物件名物件名物件名",
@@ -56,7 +56,7 @@ struct Activities {
             date: "2024年12月31日",
             hasUnreadDot: false
         ),
-        ActivityItem(
+        Activity(
             status: .confirmed,
             title: "アクティビティテンプレート名 | 要件のタイトルアクティビティテンプレート名",
             propertyName: "物件名物件名物件名物件名物件名物件名物件名物件名物件名物件名",
@@ -65,7 +65,7 @@ struct Activities {
             date: "2024年12月31日",
             hasUnreadDot: false
         ),
-        ActivityItem(
+        Activity(
             status: .reportRead,
             title: "アクティビティテンプレート名 | 要件のタイトルアクティビティテンプレート名",
             propertyName: "物件名物件名物件名物件名物件名物件名物件名物件名物件名物件名",
@@ -74,7 +74,7 @@ struct Activities {
             date: "2024年12月31日",
             hasUnreadDot: false
         ),
-        ActivityItem(
+        Activity(
             status: .answeredNo,
             title: "アクティビティテンプレート名 | 要件のタイトルアクティビティテンプレート名",
             propertyName: "物件名物件名物件名物件名物件名物件名物件名物件名物件名物件名",
@@ -83,7 +83,7 @@ struct Activities {
             date: "2024年12月31日",
             hasUnreadDot: false
         ),
-        ActivityItem(
+        Activity(
             status: .rejected,
             title: "アクティビティテンプレート名 | 要件のタイトルアクティビティテンプレート名",
             propertyName: "物件名物件名物件名物件名物件名物件名物件名物件名物件名物件名",
@@ -92,7 +92,7 @@ struct Activities {
             date: "2024年12月31日",
             hasUnreadDot: false
         ),
-        ActivityItem(
+        Activity(
             status: .canceled,
             title: "アクティビティテンプレート名 | 要件のタイトルアクティビティテンプレート名",
             propertyName: "物件名物件名物件名物件名物件名物件名物件名物件名物件名物件名",
@@ -101,7 +101,7 @@ struct Activities {
             date: "2024年12月31日",
             hasUnreadDot: false
         ),
-        ActivityItem(
+        Activity(
             status: .deleted,
             title: "",
             propertyName: "",
@@ -112,14 +112,14 @@ struct Activities {
         )
     ]
     
-    static var pendingItems: [ActivityItem] {
+    static var pendingItems: [Activity] {
         items.filter { item in
             item.status == .unanswered || item.status == .unconfirmed || 
             item.status == .reportUnread || item.status == .reproposalUnanswered
         }
     }
     
-    static var completedItems: [ActivityItem] {
+    static var completedItems: [Activity] {
         items.filter { item in
             item.status != .unanswered && item.status != .unconfirmed && 
             item.status != .reportUnread && item.status != .reproposalUnanswered

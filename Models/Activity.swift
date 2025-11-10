@@ -1,5 +1,5 @@
 //
-//  ActivityItem.swift
+//  Activity.swift
 //  oma-prototype
 //
 //  Created with CURSOR
@@ -34,7 +34,7 @@ enum ActivityStatus: String {
     }
 }
 
-struct ActivityItem: Identifiable {
+struct Activity: Identifiable {
     let id = UUID()
     let status: ActivityStatus
     let title: String

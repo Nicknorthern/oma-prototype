@@ -9,7 +9,7 @@ import Foundation
 
 struct InquiryTopic: Identifiable {
     let id: UUID
-    let inquiryId: UUID // どのInquiryContactItemに紐づくか
+    let inquiryContactId: Int // どのInquiryContactに紐づくか
     let inquiryNumber: Int // お問い合わせ番号（8桁の数字）
     let title: String // トピックのタイトル（最初のメッセージの内容など）
     let createdAt: String // 作成日時
@@ -23,9 +23,9 @@ struct InquiryTopic: Identifiable {
         return "(#\(String(format: "%08d", inquiryNumber)))"
     }
     
-    init(id: UUID = UUID(), inquiryId: UUID, inquiryNumber: Int, title: String, createdAt: String, isClosed: Bool, canClose: Bool, latestMessagePreview: String?, latestMessageTime: String?) {
+    init(id: UUID = UUID(), inquiryContactId: Int, inquiryNumber: Int, title: String, createdAt: String, isClosed: Bool, canClose: Bool, latestMessagePreview: String?, latestMessageTime: String?) {
         self.id = id
-        self.inquiryId = inquiryId
+        self.inquiryContactId = inquiryContactId
         self.inquiryNumber = inquiryNumber
         self.title = title
         self.createdAt = createdAt
