@@ -75,7 +75,7 @@ struct BottomTabBar: View {
             TabButton(
                 icon: "questionmark.circle.fill",
                 customImageName: nil,
-                title: "お問合せ",
+                title: "お問い合せ",
                 badge: 3,
                 isSelected: selectedTab == 2,
                 action: { selectedTab = 2 }

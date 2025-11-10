@@ -1,5 +1,5 @@
 //
-//  InquiryItem.swift
+//  InquiryContactItem.swift
 //  oma-prototype
 //
 //  Created with CURSOR
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct InquiryItem: Identifiable {
+struct InquiryContactItem: Identifiable {
     let id = UUID()
     let title: String
     let description: String

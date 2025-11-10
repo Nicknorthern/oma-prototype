@@ -1,5 +1,5 @@
 //
-//  Inquiry.swift
+//  InquiryContactList.swift
 //  oma-prototype
 //
 //  Created with CURSOR
@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-struct InquiryView: View {
-    @State private var selectedTab = 0
+struct InquiryContactListView: View {
+    @Binding var selectedTab: Int // 親から渡されるselectedTab
     
     // サンプルデータ
-    let inquiries: [InquiryItem] = Inquiries.items
+    let inquiryContacts: [InquiryContactItem] = InquiryContacts.items
+    
+    init(selectedTab: Binding<Int>) {
+        self._selectedTab = selectedTab
+    }
     
     var body: some View {
-        TabBarContainerView(selectedTab: $selectedTab) {
+        NavigationView {
             VStack(spacing: 0) {
                 // ヘッダー
                 HStack {
@@ -28,11 +32,13 @@ struct InquiryView: View {
                 .padding(.vertical, 12)
                 .background(Color.black)
                 
-                // トピックリスト
+                // 問い合わせ先リスト
                 ScrollView {
                     VStack(spacing: 0) {
-                        ForEach(inquiries) { inquiry in
-                            InquiryRowView(inquiry: inquiry)
+                        ForEach(inquiryContacts) { inquiryContact in
+                            NavigationLink(destination: InquiryTopicListView(inquiryContact: inquiryContact)) {
+                                InquiryRowView(inquiryContact: inquiryContact)
+                            }
                             Divider()
                                 .background(Color(red: 0.9, green: 0.9, blue: 0.9))
                         }
@@ -44,11 +50,12 @@ struct InquiryView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .navigationBarHidden(true)
     }
 }
 
 struct InquiryRowView: View {
-    let inquiry: InquiryItem
+    let inquiryContact: InquiryContactItem
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -75,17 +82,18 @@ struct InquiryRowView: View {
             
             // 中央のテキスト情報
             VStack(alignment: .leading, spacing: 4) {
-                Text(inquiry.title)
+                Text(inquiryContact.title)
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
                 
-                Text(inquiry.description)
+                Text(inquiryContact.description)
                     .font(.system(size: 12))
-                    .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
+                    .foregroundColor(Color.WPGray._800)
                     .lineLimit(1)
             }
-            
-            Spacer()
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
@@ -94,6 +102,15 @@ struct InquiryRowView: View {
 }
 
 #Preview {
-    InquiryView()
+    struct PreviewWrapper: View {
+        @State private var selectedTab = 2
+        
+        var body: some View {
+            TabBarContainerView(selectedTab: $selectedTab) {
+                InquiryContactListView(selectedTab: $selectedTab)
+            }
+        }
+    }
+    return PreviewWrapper()
 }
 

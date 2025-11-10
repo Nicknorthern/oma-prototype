@@ -19,7 +19,7 @@ struct MainTabView: View {
                 case 1:
                     ChatTopicsContent()
                 case 2:
-                    InquiryContent()
+                    InquiryContactListView(selectedTab: $selectedTab)
                 case 3:
                     ActivityListContent()
                 case 4:
@@ -76,7 +76,7 @@ struct ChatTopicsContent: View {
 }
 
 struct InquiryContent: View {
-    let inquiries: [InquiryItem] = Inquiries.items
+    let inquiries: [InquiryContactItem] = InquiryContacts.items
     
     var body: some View {
         VStack(spacing: 0) {
@@ -95,8 +95,8 @@ struct InquiryContent: View {
             // トピックリスト
             ScrollView {
                 VStack(spacing: 0) {
-                    ForEach(inquiries) { inquiry in
-                        InquiryRowView(inquiry: inquiry)
+                    ForEach(inquiries) { inquiryContact in
+                        InquiryRowView(inquiryContact: inquiryContact)
                         Divider()
                             .background(Color(red: 0.9, green: 0.9, blue: 0.9))
                     }
@@ -180,6 +180,11 @@ struct NotificationContent: View {
 }
 
 #Preview {
-    MainTabView()
+    struct PreviewWrapper: View {
+        var body: some View {
+            MainTabView()
+        }
+    }
+    return PreviewWrapper()
 }
 
