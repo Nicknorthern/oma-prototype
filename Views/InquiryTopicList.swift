@@ -102,7 +102,8 @@ struct InquiryTopicListView: View {
                     // トピックリスト
                     ForEach(filteredTopics) { topic in
                         NavigationLink(
-                            destination: InquiryChatView(topic: topic),
+                            destination: InquiryChatView(topic: topic)
+                                .environment(\.hideTabBar, hideTabBar),
                             tag: topic.id,
                             selection: $selectedTopicId
                         ) {

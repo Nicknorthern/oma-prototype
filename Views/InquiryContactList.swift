@@ -50,11 +50,11 @@ struct InquiryContactListView: View {
                 .background(Color.white)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear {
+                hideTabBar.wrappedValue = false
+            }
         }
         .navigationBarHidden(true)
-        .onAppear {
-            hideTabBar.wrappedValue = false
-        }
     }
 }
 
@@ -98,7 +98,6 @@ struct InquiryRowView: View {
         var body: some View {
             TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
                 InquiryContactListView(selectedTab: $selectedTab)
-                    .environment(\.hideTabBar, $hideTabBar)
             }
         }
     }
