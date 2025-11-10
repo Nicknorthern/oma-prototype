@@ -82,6 +82,12 @@ struct InquiryChatView: View {
     }
     
     func loadMessages() {
+        // 新規問い合わせ（latestMessagePreviewがnil）の場合はメッセージを空にする
+        if topic.latestMessagePreview == nil {
+            messages = []
+            return
+        }
+        
         // 実際の実装では、topic.idでメッセージを取得
         // サンプルデータを使用（最初の4つのメッセージを表示）
         let sampleMessages = InquiryMessages.sampleMessages.prefix(4)

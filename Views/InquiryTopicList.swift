@@ -18,6 +18,7 @@ struct InquiryTopicListView: View {
     @State private var selectedFilter: TopicFilter = .all
     @State private var topics: [InquiryTopic] = []
     @State private var showingNewTopicSheet = false
+    @State private var createdTopic: InquiryTopic? = nil
     
     var body: some View {
         VStack(spacing: 0) {
@@ -74,7 +75,13 @@ struct InquiryTopicListView: View {
                     
                     // トピックリスト
                     ForEach(filteredTopics) { topic in
-                        NavigationLink(destination: InquiryChatView(topic: topic)) {
+                        NavigationLink(
+                            destination: InquiryChatView(topic: topic),
+                            isActive: Binding(
+                                get: { createdTopic?.id == topic.id },
+                                set: { if !$0 { createdTopic = nil } }
+                            )
+                        ) {
                             InquiryTopicRowView(topic: topic)
                         }
                         Divider()
@@ -93,6 +100,8 @@ struct InquiryTopicListView: View {
         .sheet(isPresented: $showingNewTopicSheet) {
             NewTopicView(inquiry: inquiryContact) { newTopic in
                 topics.append(newTopic)
+                createdTopic = newTopic
+                showingNewTopicSheet = false
             }
         }
     }
@@ -182,23 +191,21 @@ struct InquiryTopicRowView: View {
 struct NewTopicView: View {
     let inquiry: InquiryContact // パラメータ名はinquiryのまま（Swiftの命名規則に従う）
     @Environment(\.presentationMode) var presentationMode
-    @State private var messageText = ""
+    @State private var titleText = ""
     var onTopicCreated: ((InquiryTopic) -> Void)?
     
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
-                Text("新しい問い合わせを開始")
-                    .font(.system(size: 18, weight: .bold))
+                Text("問い合わせのタイトルを入力してください")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundColor(.black)
                     .padding(.top, 16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
                 
-                TextEditor(text: $messageText)
-                    .frame(height: 200)
-                    .padding(8)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 1)
-                    )
+                TextField("タイトルを入力", text: $titleText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal, 16)
                 
                 Button(action: {
@@ -210,9 +217,9 @@ struct NewTopicView: View {
                     let now = formatter.string(from: Date())
                     
                     let newTopic = InquiryTopic(
-                        inquiryContactId: inquiry.id, // NewTopicViewのパラメータ名はinquiry
+                        inquiryContactId: inquiry.id,
                         inquiryNumber: inquiryNumber,
-                        title: messageText.isEmpty ? "新しい問い合わせ" : String(messageText.prefix(50)),
+                        title: titleText.isEmpty ? "新しい問い合わせ" : titleText,
                         createdAt: now,
                         isClosed: false,
                         canClose: true,
@@ -223,15 +230,15 @@ struct NewTopicView: View {
                     onTopicCreated?(newTopic)
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("送信")
+                    Text("お問い合わせを開始")
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
-                        .background(messageText.isEmpty ? Color.gray : Color.WPBlue._700)
+                        .background(titleText.isEmpty ? Color.gray : Color.WPBlue._700)
                         .cornerRadius(8)
                 }
-                .disabled(messageText.isEmpty)
+                .disabled(titleText.isEmpty)
                 .padding(.horizontal, 16)
                 
                 Spacer()
