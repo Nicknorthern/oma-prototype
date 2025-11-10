@@ -12,9 +12,6 @@
 		F32886D82EBE1CAB00543D3A /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886D32EBE1CAB00543D3A /* Onboarding.swift */; };
 		F32886D92EBE1CAB00543D3A /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886D42EBE1CAB00543D3A /* TopView.swift */; };
 		F32886DE2EBE1CEE00543D3A /* PreviewSmoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886DC2EBE1CEE00543D3A /* PreviewSmoke.swift */; };
-		F32886E02EBE20CD00543D3A /* ChatTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886DF2EBE20CD00543D3A /* ChatTopics.swift */; };
-		F32886E42EBFBB9100543D3A /* TopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886E12EBFBB9100543D3A /* TopicItem.swift */; };
-		F32886E82EBFBBFE00543D3A /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886E62EBFBBFE00543D3A /* Topics.swift */; };
 		F32886F32EBFC69D00543D3A /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = F32886F02EBFC69D00543D3A /* chat.png */; };
 		F32886F42EBFC69E00543D3A /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = F32886F12EBFC69D00543D3A /* Contents.json */; };
 		F32886F62EC017F200543D3A /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886F52EC017F200543D3A /* Activities.swift */; };
@@ -33,6 +30,9 @@
 		F3368CCD2EC1C15900C3DB1C /* InquiryContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3368CCC2EC1C15800C3DB1C /* InquiryContact.swift */; };
 		F34FF5E52EB0B57B00F0A394 /* oma_prototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34FF5E42EB0B57B00F0A394 /* oma_prototypeApp.swift */; };
 		F3997A8B2EC1C22100495DB0 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A8A2EC1C22000495DB0 /* Activity.swift */; };
+		F3997A8D2EC1C77900495DB0 /* ChatTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A8C2EC1C77800495DB0 /* ChatTopic.swift */; };
+		F3997A8F2EC1C7F400495DB0 /* ChatTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A8E2EC1C7F400495DB0 /* ChatTopics.swift */; };
+		F3997A912EC1C97400495DB0 /* ChatTopicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A902EC1C97300495DB0 /* ChatTopicList.swift */; };
 		F3ECE04B2EB0CAC400200E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +43,6 @@
 		F32886D32EBE1CAB00543D3A /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		F32886D42EBE1CAB00543D3A /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		F32886DC2EBE1CEE00543D3A /* PreviewSmoke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSmoke.swift; sourceTree = "<group>"; };
-		F32886DF2EBE20CD00543D3A /* ChatTopics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopics.swift; sourceTree = "<group>"; };
-		F32886E12EBFBB9100543D3A /* TopicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicItem.swift; sourceTree = "<group>"; };
-		F32886E62EBFBBFE00543D3A /* Topics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
 		F32886F02EBFC69D00543D3A /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		F32886F12EBFC69D00543D3A /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		F32886F52EC017F200543D3A /* Activities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
@@ -65,6 +62,9 @@
 		F34FF5E12EB0B56C00F0A394 /* oma-prototype-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oma-prototype-Bridging-Header.h"; sourceTree = "<group>"; };
 		F34FF5E42EB0B57B00F0A394 /* oma_prototypeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oma_prototypeApp.swift; sourceTree = "<group>"; };
 		F3997A8A2EC1C22000495DB0 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		F3997A8C2EC1C77800495DB0 /* ChatTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopic.swift; sourceTree = "<group>"; };
+		F3997A8E2EC1C7F400495DB0 /* ChatTopics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopics.swift; sourceTree = "<group>"; };
+		F3997A902EC1C97300495DB0 /* ChatTopicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopicList.swift; sourceTree = "<group>"; };
 		F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,11 +116,11 @@
 		F32886D52EBE1CAB00543D3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F3997A902EC1C97300495DB0 /* ChatTopicList.swift */,
 				F328871F2EC1AFB900543D3A /* InquiryTopicList.swift */,
 				F328871D2EC1AF3E00543D3A /* InquiryContactList.swift */,
 				F32887072EC165E400543D3A /* InquiryChatView.swift */,
 				F32886F92EC0180F00543D3A /* ActivityList.swift */,
-				F32886DF2EBE20CD00543D3A /* ChatTopics.swift */,
 				F32886D22EBE1CAB00543D3A /* LoginForm.swift */,
 				F32886D32EBE1CAB00543D3A /* Onboarding.swift */,
 				F32886D42EBE1CAB00543D3A /* TopView.swift */,
@@ -139,11 +139,11 @@
 		F32886E32EBFBB9100543D3A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F3997A8C2EC1C77800495DB0 /* ChatTopic.swift */,
 				F3997A8A2EC1C22000495DB0 /* Activity.swift */,
 				F3368CCC2EC1C15800C3DB1C /* InquiryContact.swift */,
 				F32886FE2EC1659900543D3A /* InquiryMessage.swift */,
 				F32886FF2EC1659900543D3A /* InquiryTopic.swift */,
-				F32886E12EBFBB9100543D3A /* TopicItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,12 +151,12 @@
 		F32886E72EBFBBFE00543D3A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F3997A8E2EC1C7F400495DB0 /* ChatTopics.swift */,
 				F32887192EC1AC2300543D3A /* InquiryContacts.swift */,
 				F32887152EC1A99E00543D3A /* InquiryNumberManager.swift */,
 				F32887032EC165BC00543D3A /* InquiryMessages.swift */,
 				F32887022EC165BC00543D3A /* InquiryTopics.swift */,
 				F32886F52EC017F200543D3A /* Activities.swift */,
-				F32886E62EBFBBFE00543D3A /* Topics.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -269,18 +269,18 @@
 				F34FF5E52EB0B57B00F0A394 /* oma_prototypeApp.swift in Sources */,
 				F32886D92EBE1CAB00543D3A /* TopView.swift in Sources */,
 				F32887012EC1659A00543D3A /* InquiryTopic.swift in Sources */,
-				F32886E82EBFBBFE00543D3A /* Topics.swift in Sources */,
+				F3997A8D2EC1C77900495DB0 /* ChatTopic.swift in Sources */,
 				F32887092EC165E400543D3A /* InquiryChatView.swift in Sources */,
 				F32887052EC165BC00543D3A /* InquiryMessages.swift in Sources */,
 				F32887042EC165BC00543D3A /* InquiryTopics.swift in Sources */,
 				F32887142EC1A0DF00543D3A /* Colors.swift in Sources */,
 				F328871E2EC1AF3E00543D3A /* InquiryContactList.swift in Sources */,
-				F32886E42EBFBB9100543D3A /* TopicItem.swift in Sources */,
-				F32886E02EBE20CD00543D3A /* ChatTopics.swift in Sources */,
 				F328871A2EC1AC2300543D3A /* InquiryContacts.swift in Sources */,
+				F3997A8F2EC1C7F400495DB0 /* ChatTopics.swift in Sources */,
 				F32886FA2EC0180F00543D3A /* ActivityList.swift in Sources */,
 				F32887002EC1659900543D3A /* InquiryMessage.swift in Sources */,
 				F32887202EC1AFB900543D3A /* InquiryTopicList.swift in Sources */,
+				F3997A912EC1C97400495DB0 /* ChatTopicList.swift in Sources */,
 				F32886D72EBE1CAB00543D3A /* LoginForm.swift in Sources */,
 				F32886DE2EBE1CEE00543D3A /* PreviewSmoke.swift in Sources */,
 			);

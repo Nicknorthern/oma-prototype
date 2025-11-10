@@ -1,5 +1,5 @@
 //
-//  TopicItem.swift
+//  ChatTopic.swift
 //  oma-prototype
 //
 //  Created with CURSOR
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TopicItem: Identifiable {
+struct ChatTopic: Identifiable {
     let id = UUID()
     let title: String
     let companyName: String

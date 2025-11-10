@@ -1,5 +1,5 @@
 //
-//  ChatTopics.swift
+//  ChatTopicList.swift
 //  oma-prototype
 //
 //  Created with CURSOR
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ChatTopicsView: View {
+struct ChatTopicListView: View {
     @State private var selectedTab = 1
     
     // サンプルデータ
-    let topics: [TopicItem] = Topics.items
+    let topics: [ChatTopic] = ChatTopics.items
     
     var body: some View {
         TabBarContainerView(selectedTab: $selectedTab) {
@@ -48,7 +48,7 @@ struct ChatTopicsView: View {
 }
 
 struct TopicRowView: View {
-    let topic: TopicItem
+    let topic: ChatTopic
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -107,6 +107,6 @@ struct TopicRowView: View {
 }
 
 #Preview {
-    ChatTopicsView()
+    ChatTopicListView()
 }
 

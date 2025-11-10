@@ -44,7 +44,7 @@ struct TopViewContent: View {
 }
 
 struct ChatTopicsContent: View {
-    let topics: [TopicItem] = Topics.items
+    let topics: [ChatTopic] = ChatTopics.items
     
     var body: some View {
         VStack(spacing: 0) {
