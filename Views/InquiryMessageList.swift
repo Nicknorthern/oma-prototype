@@ -1,5 +1,5 @@
 //
-//  InquiryChatView.swift
+//  InquiryMessageList.swift
 //  oma-prototype
 //
 //  Created with CURSOR
