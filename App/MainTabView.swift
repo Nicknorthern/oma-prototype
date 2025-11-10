@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab = 0
+    @State private var hideTabBar = false
     
     var body: some View {
-        TabBarContainerView(selectedTab: $selectedTab) {
+        TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
             Group {
                 switch selectedTab {
                 case 0:

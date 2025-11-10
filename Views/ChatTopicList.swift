@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ChatTopicListView: View {
     @State private var selectedTab = 1
+    @State private var hideTabBar = false
     
     // サンプルデータ
     let topics: [ChatTopic] = ChatTopics.items
     
     var body: some View {
-        TabBarContainerView(selectedTab: $selectedTab) {
+        TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
             VStack(spacing: 0) {
                 // ヘッダー
                 HStack {
@@ -43,6 +44,7 @@ struct ChatTopicListView: View {
         }
         .onAppear {
             selectedTab = 1
+            hideTabBar = false
         }
     }
 }
@@ -109,4 +111,3 @@ struct TopicRowView: View {
 #Preview {
     ChatTopicListView()
 }
-

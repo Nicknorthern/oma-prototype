@@ -20,6 +20,7 @@ struct InquiryTopicListView: View {
     @State private var showingNewTopicSheet = false
     @State private var selectedTopicId: UUID? = nil
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.hideTabBar) private var hideTabBar
     
     var body: some View {
         VStack(spacing: 0) {
@@ -118,6 +119,7 @@ struct InquiryTopicListView: View {
         }
         .navigationBarHidden(true)
         .onAppear {
+            hideTabBar.wrappedValue = true
             loadTopics()
         }
         .sheet(isPresented: $showingNewTopicSheet) {
@@ -280,8 +282,19 @@ struct NewTopicView: View {
 }
 
 #Preview {
-    NavigationView {
-        InquiryTopicListView(inquiryContact: InquiryContacts.items[0])
+    struct PreviewWrapper: View {
+        @State private var selectedTab = 2
+        @State private var hideTabBar = false
+        
+        var body: some View {
+            TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
+                NavigationView {
+                    InquiryTopicListView(inquiryContact: InquiryContacts.items[0])
+                        .environment(\.hideTabBar, $hideTabBar)
+                }
+            }
+        }
     }
+    return PreviewWrapper()
 }
 

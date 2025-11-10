@@ -13,6 +13,7 @@ struct InquiryChatView: View {
     @State private var messageText = ""
     @State private var canPost = true
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.hideTabBar) private var hideTabBar
     
     var body: some View {
         VStack(spacing: 0) {
@@ -108,6 +109,7 @@ struct InquiryChatView: View {
         }
         .navigationBarHidden(true)
         .onAppear {
+            hideTabBar.wrappedValue = true
             loadMessages()
             canPost = !topic.isClosed
         }
@@ -199,8 +201,19 @@ struct MessageBubbleView: View {
 }
 
 #Preview {
-    NavigationView {
-        InquiryChatView(topic: InquiryTopics.sampleTopics[0])
+    struct PreviewWrapper: View {
+        @State private var selectedTab = 2
+        @State private var hideTabBar = false
+        
+        var body: some View {
+            TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
+                NavigationView {
+                    InquiryChatView(topic: InquiryTopics.sampleTopics[0])
+                        .environment(\.hideTabBar, $hideTabBar)
+                }
+            }
+        }
     }
+    return PreviewWrapper()
 }
 

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct TopView: View {
     @State private var selectedTab = 0
+    @State private var hideTabBar = false
     
     var body: some View {
-        TabBarContainerView(selectedTab: $selectedTab) {
+        TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
             Spacer()
             
             Text("トップ画面")
@@ -19,6 +20,9 @@ struct TopView: View {
                 .padding()
             
             Spacer()
+        }
+        .onAppear {
+            hideTabBar = false
         }
     }
 }

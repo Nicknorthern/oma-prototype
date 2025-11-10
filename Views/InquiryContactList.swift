@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InquiryContactListView: View {
     @Binding var selectedTab: Int // 親から渡されるselectedTab
+    @Environment(\.hideTabBar) private var hideTabBar
     
     // サンプルデータ（displayOrderの昇順でソート）
     let inquiryContacts: [InquiryContact] = InquiryContacts.items.sorted { $0.displayOrder < $1.displayOrder }
@@ -51,6 +52,9 @@ struct InquiryContactListView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .navigationBarHidden(true)
+        .onAppear {
+            hideTabBar.wrappedValue = false
+        }
     }
 }
 
@@ -89,10 +93,12 @@ struct InquiryRowView: View {
 #Preview {
     struct PreviewWrapper: View {
         @State private var selectedTab = 2
+        @State private var hideTabBar = false
         
         var body: some View {
-            TabBarContainerView(selectedTab: $selectedTab) {
+            TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
                 InquiryContactListView(selectedTab: $selectedTab)
+                    .environment(\.hideTabBar, $hideTabBar)
             }
         }
     }

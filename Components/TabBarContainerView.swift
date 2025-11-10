@@ -7,12 +7,25 @@
 
 import SwiftUI
 
+private struct HideTabBarKey: EnvironmentKey {
+    static let defaultValue: Binding<Bool> = .constant(false)
+}
+
+extension EnvironmentValues {
+    var hideTabBar: Binding<Bool> {
+        get { self[HideTabBarKey.self] }
+        set { self[HideTabBarKey.self] = newValue }
+    }
+}
+
 struct TabBarContainerView<Content: View>: View {
     @Binding var selectedTab: Int
+    @Binding var hideTabBar: Bool
     let content: Content
     
-    init(selectedTab: Binding<Int>, @ViewBuilder content: () -> Content) {
+    init(selectedTab: Binding<Int>, hideTabBar: Binding<Bool>, @ViewBuilder content: () -> Content) {
         self._selectedTab = selectedTab
+        self._hideTabBar = hideTabBar
         self.content = content()
     }
     
@@ -20,10 +33,13 @@ struct TabBarContainerView<Content: View>: View {
         VStack(spacing: 0) {
             // メインコンテンツエリア
             content
+                .environment(\.hideTabBar, $hideTabBar)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             // フッターメニュー
-            BottomTabBar(selectedTab: $selectedTab)
+            if !hideTabBar {
+                BottomTabBar(selectedTab: $selectedTab)
+            }
         }
         .background(Color.white)
     }
@@ -34,7 +50,7 @@ struct TabBarContainerView<Content: View>: View {
         @State private var selectedTab = 0
         
         var body: some View {
-            TabBarContainerView(selectedTab: $selectedTab) {
+            TabBarContainerView(selectedTab: $selectedTab, hideTabBar: .constant(false)) {
                 Spacer()
                 
                 Text("プレビュー用コンテンツ")

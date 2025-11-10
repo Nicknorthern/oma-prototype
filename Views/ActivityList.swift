@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ActivityListView: View {
     @State private var selectedTab = 3
+    @State private var hideTabBar = false
     
     var body: some View {
-        TabBarContainerView(selectedTab: $selectedTab) {
+        TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
             ZStack(alignment: .bottomTrailing) {
                 VStack(spacing: 0) {
                     // ヘッダー
@@ -70,6 +71,7 @@ struct ActivityListView: View {
         }
         .onAppear {
             selectedTab = 3
+            hideTabBar = false
         }
     }
 }
