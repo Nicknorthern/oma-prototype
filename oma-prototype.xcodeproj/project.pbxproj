@@ -21,7 +21,6 @@
 		F32887012EC1659A00543D3A /* InquiryTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886FF2EC1659900543D3A /* InquiryTopic.swift */; };
 		F32887042EC165BC00543D3A /* InquiryTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32887022EC165BC00543D3A /* InquiryTopics.swift */; };
 		F32887052EC165BC00543D3A /* InquiryMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32887032EC165BC00543D3A /* InquiryMessages.swift */; };
-		F32887092EC165E400543D3A /* InquiryChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32887072EC165E400543D3A /* InquiryChatView.swift */; };
 		F32887142EC1A0DF00543D3A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328870F2EC1A0DE00543D3A /* Colors.swift */; };
 		F32887162EC1A99E00543D3A /* InquiryNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32887152EC1A99E00543D3A /* InquiryNumberManager.swift */; };
 		F328871A2EC1AC2300543D3A /* InquiryContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32887192EC1AC2300543D3A /* InquiryContacts.swift */; };
@@ -33,6 +32,7 @@
 		F3997A8D2EC1C77900495DB0 /* ChatTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A8C2EC1C77800495DB0 /* ChatTopic.swift */; };
 		F3997A8F2EC1C7F400495DB0 /* ChatTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A8E2EC1C7F400495DB0 /* ChatTopics.swift */; };
 		F3997A912EC1C97400495DB0 /* ChatTopicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A902EC1C97300495DB0 /* ChatTopicList.swift */; };
+		F3997A932EC230C400495DB0 /* InquiryMessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A922EC230C300495DB0 /* InquiryMessageList.swift */; };
 		F3ECE04B2EB0CAC400200E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		F32886FF2EC1659900543D3A /* InquiryTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTopic.swift; sourceTree = "<group>"; };
 		F32887022EC165BC00543D3A /* InquiryTopics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTopics.swift; sourceTree = "<group>"; };
 		F32887032EC165BC00543D3A /* InquiryMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryMessages.swift; sourceTree = "<group>"; };
-		F32887072EC165E400543D3A /* InquiryChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryChatView.swift; sourceTree = "<group>"; };
 		F328870F2EC1A0DE00543D3A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F32887152EC1A99E00543D3A /* InquiryNumberManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryNumberManager.swift; sourceTree = "<group>"; };
 		F32887192EC1AC2300543D3A /* InquiryContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryContacts.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		F3997A8C2EC1C77800495DB0 /* ChatTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopic.swift; sourceTree = "<group>"; };
 		F3997A8E2EC1C7F400495DB0 /* ChatTopics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopics.swift; sourceTree = "<group>"; };
 		F3997A902EC1C97300495DB0 /* ChatTopicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopicList.swift; sourceTree = "<group>"; };
+		F3997A922EC230C300495DB0 /* InquiryMessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryMessageList.swift; sourceTree = "<group>"; };
 		F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,10 +116,10 @@
 		F32886D52EBE1CAB00543D3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F3997A922EC230C300495DB0 /* InquiryMessageList.swift */,
 				F3997A902EC1C97300495DB0 /* ChatTopicList.swift */,
 				F328871F2EC1AFB900543D3A /* InquiryTopicList.swift */,
 				F328871D2EC1AF3E00543D3A /* InquiryContactList.swift */,
-				F32887072EC165E400543D3A /* InquiryChatView.swift */,
 				F32886F92EC0180F00543D3A /* ActivityList.swift */,
 				F32886D22EBE1CAB00543D3A /* LoginForm.swift */,
 				F32886D32EBE1CAB00543D3A /* Onboarding.swift */,
@@ -270,7 +270,7 @@
 				F32886D92EBE1CAB00543D3A /* TopView.swift in Sources */,
 				F32887012EC1659A00543D3A /* InquiryTopic.swift in Sources */,
 				F3997A8D2EC1C77900495DB0 /* ChatTopic.swift in Sources */,
-				F32887092EC165E400543D3A /* InquiryChatView.swift in Sources */,
+				F3997A932EC230C400495DB0 /* InquiryMessageList.swift in Sources */,
 				F32887052EC165BC00543D3A /* InquiryMessages.swift in Sources */,
 				F32887042EC165BC00543D3A /* InquiryTopics.swift in Sources */,
 				F32887142EC1A0DF00543D3A /* Colors.swift in Sources */,
