@@ -18,7 +18,7 @@ struct InquiryTopicListView: View {
     @State private var selectedFilter: TopicFilter = .all
     @State private var topics: [InquiryTopic] = []
     @State private var showingNewTopicSheet = false
-    @State private var selectedTopicId: UUID? = nil
+    @State private var selectedTopicId: Int? = nil
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.hideTabBar) private var hideTabBar
     
@@ -147,21 +147,8 @@ struct InquiryTopicListView: View {
     }
     
     func loadTopics() {
-        // 実際の実装では、inquiryContact.idでトピックを取得
-        // サンプルデータを使用（すべてのトピックを表示）
-        topics = InquiryTopics.sampleTopics.map { topic in
-            // inquiryContactIdを現在のinquiryContact.idに設定
-            InquiryTopic(
-                inquiryContactId: inquiryContact.id,
-                inquiryNumber: topic.inquiryNumber,
-                title: topic.title,
-                createdAt: topic.createdAt,
-                isClosed: topic.isClosed,
-                canClose: topic.canClose,
-                latestMessagePreview: topic.latestMessagePreview,
-                latestMessageTime: topic.latestMessageTime
-            )
-        }
+        // inquiryContact.idでトピックを取得
+        topics = InquiryTopics.topics(for: inquiryContact.id)
     }
 }
 
@@ -239,15 +226,15 @@ struct NewTopicView: View {
                 
                 Button(action: {
                     // トピック作成処理
-                    let inquiryNumber = InquiryNumberManager.shared.getNextInquiryNumber()
+                    let topicId = InquiryNumberManager.shared.getNextInquiryNumber()
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
                     formatter.locale = Locale(identifier: "ja_JP")
                     let now = formatter.string(from: Date())
                     
                     let newTopic = InquiryTopic(
+                        id: topicId,
                         inquiryContactId: inquiry.id,
-                        inquiryNumber: inquiryNumber,
                         title: titleText.isEmpty ? "新しい問い合わせ" : titleText,
                         createdAt: now,
                         isClosed: false,

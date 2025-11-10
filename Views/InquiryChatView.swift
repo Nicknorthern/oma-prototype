@@ -122,24 +122,18 @@ struct InquiryChatView: View {
             return
         }
         
-        // 実際の実装では、topic.idでメッセージを取得
-        // サンプルデータを使用（最初の4つのメッセージを表示）
-        let sampleMessages = InquiryMessages.sampleMessages.prefix(4)
-        messages = Array(sampleMessages.map { message in
-            InquiryMessage(
-                topicId: topic.id,
-                senderType: message.senderType,
-                content: message.content,
-                time: message.time,
-                senderName: message.senderName
-            )
-        })
+        // topic.idでメッセージを取得
+        messages = InquiryMessages.messages(for: topic.id)
     }
     
     func sendMessage() {
         guard !messageText.isEmpty else { return }
         
+        // 新しいメッセージIDを生成（既存のメッセージの最大ID + 1）
+        let newMessageId = (messages.map { $0.id }.max() ?? 0) + 1
+        
         let newMessage = InquiryMessage(
+            id: newMessageId,
             topicId: topic.id,
             senderType: .user,
             content: messageText,
