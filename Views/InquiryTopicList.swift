@@ -19,10 +19,35 @@ struct InquiryTopicListView: View {
     @State private var topics: [InquiryTopic] = []
     @State private var showingNewTopicSheet = false
     @State private var createdTopic: InquiryTopic? = nil
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(spacing: 0) {
-            // ヘッダー
+            // ヘッダー（黒背景、白文字、バックボタン）
+            ZStack {
+                // 中央のタイトル
+                Text("お問い合わせ")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+                
+                // 左側のバックボタン
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                    }
+                    .padding(.leading, 16)
+                    
+                    Spacer()
+                }
+            }
+            .padding(.vertical, 12)
+            .background(Color.black)
+            
+            // タイトルと説明、セグメントコントロール
             VStack(spacing: 12) {
                 // タイトルと説明
                 VStack(alignment: .leading, spacing: 8) {
@@ -93,7 +118,7 @@ struct InquiryTopicListView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)
         }
-        .navigationBarTitle("お問い合わせ", displayMode: .inline)
+        .navigationBarHidden(true)
         .onAppear {
             loadTopics()
         }
