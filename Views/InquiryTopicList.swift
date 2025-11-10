@@ -18,7 +18,7 @@ struct InquiryTopicListView: View {
     @State private var selectedFilter: TopicFilter = .all
     @State private var topics: [InquiryTopic] = []
     @State private var showingNewTopicSheet = false
-    @State private var createdTopic: InquiryTopic? = nil
+    @State private var selectedTopicId: UUID? = nil
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -102,10 +102,8 @@ struct InquiryTopicListView: View {
                     ForEach(filteredTopics) { topic in
                         NavigationLink(
                             destination: InquiryChatView(topic: topic),
-                            isActive: Binding(
-                                get: { createdTopic?.id == topic.id },
-                                set: { if !$0 { createdTopic = nil } }
-                            )
+                            tag: topic.id,
+                            selection: $selectedTopicId
                         ) {
                             InquiryTopicRowView(topic: topic)
                         }
@@ -125,8 +123,11 @@ struct InquiryTopicListView: View {
         .sheet(isPresented: $showingNewTopicSheet) {
             NewTopicView(inquiry: inquiryContact) { newTopic in
                 topics.append(newTopic)
-                createdTopic = newTopic
                 showingNewTopicSheet = false
+                // 新規作成されたトピックのIDを設定して自動遷移
+                DispatchQueue.main.async {
+                    selectedTopicId = newTopic.id
+                }
             }
         }
     }
