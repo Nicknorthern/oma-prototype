@@ -13,6 +13,7 @@ struct InquiryTopics {
         // InquiryContact ID: 1 (売買契約の内容にかかわること)
         InquiryTopic(
             id: 1,
+            ownerId: 1,
             inquiryContactId: 1,
             title: "契約書の内容について確認したい",
             createdAt: "2025年11月1日 10:30",
@@ -23,6 +24,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 2,
+            ownerId: 1,
             inquiryContactId: 1,
             title: "手付金の返還について",
             createdAt: "2025年10月25日 09:15",
@@ -33,6 +35,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 3,
+            ownerId: 1,
             inquiryContactId: 1,
             title: "契約解除の条件について",
             createdAt: "2025年10月20日 11:00",
@@ -43,6 +46,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 23,
+            ownerId: 1,
             inquiryContactId: 1,
             title: "契約書の修正について",
             createdAt: "2025年10月15日 09:00",
@@ -54,6 +58,7 @@ struct InquiryTopics {
         // InquiryContact ID: 2 (営業担当者にかかわること)
         InquiryTopic(
             id: 4,
+            ownerId: 1,
             inquiryContactId: 2,
             title: "営業担当者の連絡先について",
             createdAt: "2025年11月2日 09:00",
@@ -64,6 +69,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 5,
+            ownerId: 1,
             inquiryContactId: 2,
             title: "営業時間の確認",
             createdAt: "2025年10月30日 14:00",
@@ -74,6 +80,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 24,
+            ownerId: 1,
             inquiryContactId: 2,
             title: "担当者の変更依頼",
             createdAt: "2025年10月22日 10:00",
@@ -85,6 +92,7 @@ struct InquiryTopics {
         // InquiryContact ID: 3 (住宅ローン、ローン会社にかかわること)
         InquiryTopic(
             id: 6,
+            ownerId: 1,
             inquiryContactId: 3,
             title: "ローン申請の進捗について",
             createdAt: "2025年11月3日 11:00",
@@ -95,6 +103,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 25,
+            ownerId: 1,
             inquiryContactId: 3,
             title: "ローン金利の確認",
             createdAt: "2025年10月31日 09:00",
@@ -105,6 +114,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 26,
+            ownerId: 1,
             inquiryContactId: 3,
             title: "借入可能額の相談",
             createdAt: "2025年10月24日 14:00",
@@ -116,6 +126,7 @@ struct InquiryTopics {
         // InquiryContact ID: 4 (不動産登記にかかわること)
         InquiryTopic(
             id: 7,
+            ownerId: 1,
             inquiryContactId: 4,
             title: "登記手続きの確認",
             createdAt: "2025年11月4日 10:00",
@@ -126,6 +137,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 27,
+            ownerId: 1,
             inquiryContactId: 4,
             title: "登記完了の確認",
             createdAt: "2025年10月23日 11:00",
@@ -136,6 +148,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 28,
+            ownerId: 1,
             inquiryContactId: 4,
             title: "登記費用の内訳について",
             createdAt: "2025年10月18日 13:00",
@@ -147,6 +160,7 @@ struct InquiryTopics {
         // InquiryContact ID: 5 (物件のお引渡しにかかわること)
         InquiryTopic(
             id: 8,
+            ownerId: 1,
             inquiryContactId: 5,
             title: "引渡し日の調整について",
             createdAt: "2025年11月5日 09:30",
@@ -157,6 +171,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 9,
+            ownerId: 1,
             inquiryContactId: 5,
             title: "引渡し時の立ち会いについて",
             createdAt: "2025年10月28日 14:00",
@@ -168,6 +183,7 @@ struct InquiryTopics {
         // InquiryContact ID: 6 (賃貸募集・申込について)
         InquiryTopic(
             id: 10,
+            ownerId: 1,
             inquiryContactId: 6,
             title: "賃貸物件の申込について",
             createdAt: "2025年11月6日 10:00",
@@ -178,6 +194,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 11,
+            ownerId: 1,
             inquiryContactId: 6,
             title: "入居審査の進捗確認",
             createdAt: "2025年11月4日 09:00",
@@ -188,6 +205,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 12,
+            ownerId: 1,
             inquiryContactId: 6,
             title: "初期費用の内訳について",
             createdAt: "2025年10月29日 13:00",
@@ -199,6 +217,7 @@ struct InquiryTopics {
         // InquiryContact ID: 7 (リフレッシュ工事・住設機器修理について)
         InquiryTopic(
             id: 13,
+            ownerId: 1,
             inquiryContactId: 7,
             title: "エアコンの修理依頼",
             createdAt: "2025年11月7日 08:30",
@@ -209,6 +228,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 14,
+            ownerId: 1,
             inquiryContactId: 7,
             title: "リフレッシュ工事の見積もり依頼",
             createdAt: "2025年11月1日 11:00",
@@ -219,6 +239,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 15,
+            ownerId: 1,
             inquiryContactId: 7,
             title: "給湯器の故障について",
             createdAt: "2025年10月27日 15:00",
@@ -230,6 +251,7 @@ struct InquiryTopics {
         // InquiryContact ID: 8 (物件売却・賃貸管理会社変更について)
         InquiryTopic(
             id: 16,
+            ownerId: 1,
             inquiryContactId: 8,
             title: "物件売却の相談",
             createdAt: "2025年11月8日 09:00",
@@ -240,6 +262,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 17,
+            ownerId: 1,
             inquiryContactId: 8,
             title: "管理会社変更の手続きについて",
             createdAt: "2025年11月2日 13:00",
@@ -251,6 +274,7 @@ struct InquiryTopics {
         // InquiryContact ID: 9 (賃貸その他)
         InquiryTopic(
             id: 18,
+            ownerId: 1,
             inquiryContactId: 9,
             title: "駐車場の利用について",
             createdAt: "2025年11月9日 10:00",
@@ -261,6 +285,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 19,
+            ownerId: 1,
             inquiryContactId: 9,
             title: "ペット飼育の可否について",
             createdAt: "2025年11月3日 14:00",
@@ -271,6 +296,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 20,
+            ownerId: 1,
             inquiryContactId: 9,
             title: "鍵の紛失について",
             createdAt: "2025年10月26日 16:00",
@@ -282,6 +308,7 @@ struct InquiryTopics {
         // InquiryContact ID: 10 (その他)
         InquiryTopic(
             id: 21,
+            ownerId: 1,
             inquiryContactId: 10,
             title: "その他のご相談",
             createdAt: "2025年11月10日 09:00",
@@ -292,6 +319,7 @@ struct InquiryTopics {
         ),
         InquiryTopic(
             id: 22,
+            ownerId: 1,
             inquiryContactId: 10,
             title: "書類の再発行依頼",
             createdAt: "2025年11月5日 11:00",

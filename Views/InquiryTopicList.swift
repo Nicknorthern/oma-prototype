@@ -234,6 +234,7 @@ struct NewTopicView: View {
                     
                     let newTopic = InquiryTopic(
                         id: topicId,
+                        ownerId: 1,
                         inquiryContactId: inquiry.id,
                         title: titleText.isEmpty ? "新しい問い合わせ" : titleText,
                         createdAt: now,
