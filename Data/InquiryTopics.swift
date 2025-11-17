@@ -12,7 +12,7 @@ struct InquiryTopics {
     static let sampleTopics: [InquiryTopic] = [
         // InquiryContact ID: 1 (売買契約の内容にかかわること)
         InquiryTopic(
-            id: 1,
+            id: 101,
             ownerId: 1,
             inquiryContactId: 1,
             title: "契約書の内容について確認したい",
@@ -23,7 +23,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月1日 14:20"
         ),
         InquiryTopic(
-            id: 2,
+            id: 102,
             ownerId: 1,
             inquiryContactId: 1,
             title: "手付金の返還について",
@@ -34,7 +34,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年10月28日 16:45"
         ),
         InquiryTopic(
-            id: 3,
+            id: 103,
             ownerId: 1,
             inquiryContactId: 1,
             title: "契約解除の条件について",
@@ -45,7 +45,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年10月20日 15:30"
         ),
         InquiryTopic(
-            id: 23,
+            id: 123,
             ownerId: 1,
             inquiryContactId: 1,
             title: "契約書の修正について",
@@ -57,7 +57,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 2 (営業担当者にかかわること)
         InquiryTopic(
-            id: 4,
+            id: 204,
             ownerId: 1,
             inquiryContactId: 2,
             title: "営業担当者の連絡先について",
@@ -68,7 +68,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月2日 10:15"
         ),
         InquiryTopic(
-            id: 5,
+            id: 205,
             ownerId: 1,
             inquiryContactId: 2,
             title: "営業時間の確認",
@@ -79,7 +79,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年10月30日 15:30"
         ),
         InquiryTopic(
-            id: 24,
+            id: 224,
             ownerId: 1,
             inquiryContactId: 2,
             title: "担当者の変更依頼",
@@ -91,7 +91,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 3 (住宅ローン、ローン会社にかかわること)
         InquiryTopic(
-            id: 6,
+            id: 306,
             ownerId: 1,
             inquiryContactId: 3,
             title: "ローン申請の進捗について",
@@ -102,7 +102,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月3日 13:20"
         ),
         InquiryTopic(
-            id: 25,
+            id: 325,
             ownerId: 1,
             inquiryContactId: 3,
             title: "ローン金利の確認",
@@ -113,7 +113,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年10月31日 10:30"
         ),
         InquiryTopic(
-            id: 26,
+            id: 326,
             ownerId: 1,
             inquiryContactId: 3,
             title: "借入可能額の相談",
@@ -125,7 +125,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 4 (不動産登記にかかわること)
         InquiryTopic(
-            id: 7,
+            id: 407,
             ownerId: 1,
             inquiryContactId: 4,
             title: "登記手続きの確認",
@@ -136,7 +136,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月4日 11:30"
         ),
         InquiryTopic(
-            id: 27,
+            id: 427,
             ownerId: 1,
             inquiryContactId: 4,
             title: "登記完了の確認",
@@ -147,7 +147,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年10月23日 14:00"
         ),
         InquiryTopic(
-            id: 28,
+            id: 428,
             ownerId: 1,
             inquiryContactId: 4,
             title: "登記費用の内訳について",
@@ -159,7 +159,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 5 (物件のお引渡しにかかわること)
         InquiryTopic(
-            id: 8,
+            id: 508,
             ownerId: 1,
             inquiryContactId: 5,
             title: "引渡し日の調整について",
@@ -170,7 +170,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月5日 10:45"
         ),
         InquiryTopic(
-            id: 9,
+            id: 509,
             ownerId: 1,
             inquiryContactId: 5,
             title: "引渡し時の立ち会いについて",
@@ -182,7 +182,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 6 (賃貸募集・申込について)
         InquiryTopic(
-            id: 10,
+            id: 610,
             ownerId: 1,
             inquiryContactId: 6,
             title: "賃貸物件の申込について",
@@ -193,7 +193,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月6日 11:30"
         ),
         InquiryTopic(
-            id: 11,
+            id: 611,
             ownerId: 1,
             inquiryContactId: 6,
             title: "入居審査の進捗確認",
@@ -204,7 +204,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月4日 16:00"
         ),
         InquiryTopic(
-            id: 12,
+            id: 612,
             ownerId: 1,
             inquiryContactId: 6,
             title: "初期費用の内訳について",
@@ -216,7 +216,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 7 (リフレッシュ工事・住設機器修理について)
         InquiryTopic(
-            id: 13,
+            id: 713,
             ownerId: 1,
             inquiryContactId: 7,
             title: "エアコンの修理依頼",
@@ -227,7 +227,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月7日 10:00"
         ),
         InquiryTopic(
-            id: 14,
+            id: 714,
             ownerId: 1,
             inquiryContactId: 7,
             title: "リフレッシュ工事の見積もり依頼",
@@ -238,7 +238,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月1日 14:00"
         ),
         InquiryTopic(
-            id: 15,
+            id: 715,
             ownerId: 1,
             inquiryContactId: 7,
             title: "給湯器の故障について",
@@ -250,7 +250,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 8 (物件売却・賃貸管理会社変更について)
         InquiryTopic(
-            id: 16,
+            id: 816,
             ownerId: 1,
             inquiryContactId: 8,
             title: "物件売却の相談",
@@ -261,7 +261,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月8日 10:30"
         ),
         InquiryTopic(
-            id: 17,
+            id: 817,
             ownerId: 1,
             inquiryContactId: 8,
             title: "管理会社変更の手続きについて",
@@ -273,7 +273,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 9 (賃貸その他)
         InquiryTopic(
-            id: 18,
+            id: 918,
             ownerId: 1,
             inquiryContactId: 9,
             title: "駐車場の利用について",
@@ -284,7 +284,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月9日 11:15"
         ),
         InquiryTopic(
-            id: 19,
+            id: 919,
             ownerId: 1,
             inquiryContactId: 9,
             title: "ペット飼育の可否について",
@@ -295,7 +295,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月3日 15:30"
         ),
         InquiryTopic(
-            id: 20,
+            id: 920,
             ownerId: 1,
             inquiryContactId: 9,
             title: "鍵の紛失について",
@@ -307,7 +307,7 @@ struct InquiryTopics {
         ),
         // InquiryContact ID: 10 (その他)
         InquiryTopic(
-            id: 21,
+            id: 1021,
             ownerId: 1,
             inquiryContactId: 10,
             title: "その他のご相談",
@@ -318,7 +318,7 @@ struct InquiryTopics {
             latestMessageTime: "2025年11月10日 10:30"
         ),
         InquiryTopic(
-            id: 22,
+            id: 1022,
             ownerId: 1,
             inquiryContactId: 10,
             title: "書類の再発行依頼",
