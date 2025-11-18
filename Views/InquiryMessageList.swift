@@ -135,10 +135,10 @@ struct InquiryChatView: View {
         let newMessage = InquiryMessage(
             id: newMessageId,
             topicId: topic.id,
-            senderType: .user,
+            senderType: .owner,
             content: messageText,
             time: formatCurrentTime(),
-            senderName: nil
+            senderId: 1 // オーナーID（仮の値、実際の実装では現在のオーナーIDを使用）
         )
         
         messages.append(newMessage)
@@ -156,26 +156,31 @@ struct InquiryChatView: View {
 struct MessageBubbleView: View {
     let message: InquiryMessage
     
+    // スタッフIDからスタッフ名を取得する関数
+    func getStaffName(from staffId: Int) -> String {
+        return Staffs.getStaffName(by: staffId)
+    }
+    
     var body: some View {
         HStack {
-            if message.senderType == .user {
+            if message.senderType == .owner {
                 Spacer()
             }
             
-            VStack(alignment: message.senderType == .user ? .trailing : .leading, spacing: 4) {
-                if message.senderType == .staff, let senderName = message.senderName {
-                    Text(senderName)
+            VStack(alignment: message.senderType == .owner ? .trailing : .leading, spacing: 4) {
+                if message.senderType == .staff {
+                    Text(getStaffName(from: message.senderId))
                         .font(.system(size: 10))
                         .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
                 }
                 
                 Text(message.content)
                     .font(.system(size: 14))
-                    .foregroundColor(message.senderType == .user ? .white : .black)
+                    .foregroundColor(message.senderType == .owner ? .white : .black)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
                     .background(
-                        message.senderType == .user
+                        message.senderType == .owner
                             ? Color.WPBlue._700
                             : Color.white
                     )
@@ -185,7 +190,7 @@ struct MessageBubbleView: View {
                     .font(.system(size: 10))
                     .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.6))
             }
-            .frame(maxWidth: 280, alignment: message.senderType == .user ? .trailing : .leading)
+            .frame(maxWidth: 280, alignment: message.senderType == .owner ? .trailing : .leading)
             
             if message.senderType == .staff {
                 Spacer()

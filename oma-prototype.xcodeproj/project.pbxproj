@@ -36,6 +36,8 @@
 		F3997A952EC7150200495DB0 /* DocumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A942EC7150200495DB0 /* DocumentList.swift */; };
 		F3997A972EC7151100495DB0 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A962EC7151100495DB0 /* Document.swift */; };
 		F3997A992EC7152100495DB0 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A982EC7152100495DB0 /* Documents.swift */; };
+		F3997A9B2ECAFB1000495DB0 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A9A2ECAFB1000495DB0 /* Staff.swift */; };
+		F3997A9D2ECAFB1D00495DB0 /* Staffs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A9C2ECAFB1D00495DB0 /* Staffs.swift */; };
 		F3ECE04B2EB0CAC400200E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		F3997A942EC7150200495DB0 /* DocumentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentList.swift; sourceTree = "<group>"; };
 		F3997A962EC7151100495DB0 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		F3997A982EC7152100495DB0 /* Documents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
+		F3997A9A2ECAFB1000495DB0 /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
+		F3997A9C2ECAFB1D00495DB0 /* Staffs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staffs.swift; sourceTree = "<group>"; };
 		F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,7 @@
 		F32886E32EBFBB9100543D3A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F3997A9A2ECAFB1000495DB0 /* Staff.swift */,
 				F3997A962EC7151100495DB0 /* Document.swift */,
 				F3997A8C2EC1C77800495DB0 /* ChatTopic.swift */,
 				F3997A8A2EC1C22000495DB0 /* Activity.swift */,
@@ -159,6 +164,7 @@
 		F32886E72EBFBBFE00543D3A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F3997A9C2ECAFB1D00495DB0 /* Staffs.swift */,
 				F3997A982EC7152100495DB0 /* Documents.swift */,
 				F3997A8E2EC1C7F400495DB0 /* ChatTopics.swift */,
 				F32887192EC1AC2300543D3A /* InquiryContacts.swift */,
@@ -294,7 +300,9 @@
 				F3997A912EC1C97400495DB0 /* ChatTopicList.swift in Sources */,
 				F32886D72EBE1CAB00543D3A /* LoginForm.swift in Sources */,
 				F3997A992EC7152100495DB0 /* Documents.swift in Sources */,
+				F3997A9B2ECAFB1000495DB0 /* Staff.swift in Sources */,
 				F32886DE2EBE1CEE00543D3A /* PreviewSmoke.swift in Sources */,
+				F3997A9D2ECAFB1D00495DB0 /* Staffs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
@@ -441,9 +450,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "WP-Product-Department.oma-prototype";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "WP-Product-Department.oma-prototype-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "oma-prototype-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -458,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
@@ -473,9 +484,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "WP-Product-Department.oma-prototype";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "WP-Product-Department.oma-prototype-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "oma-prototype-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

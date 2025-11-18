@@ -73,7 +73,7 @@ struct BottomTabBar: View {
             TabButton(
                 icon: nil,
                 customImageName: "donut_large",
-                title: "保有資産",
+                title: "保有物件",
                 badge: nil,
                 isSelected: selectedTab == 0,
                 action: { selectedTab = 0 }
