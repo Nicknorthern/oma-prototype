@@ -10,7 +10,6 @@
 		F32886D02EBE1C9000543D3A /* TabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886CE2EBE1C9000543D3A /* TabBarContainerView.swift */; };
 		F32886D72EBE1CAB00543D3A /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886D22EBE1CAB00543D3A /* LoginForm.swift */; };
 		F32886D82EBE1CAB00543D3A /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886D32EBE1CAB00543D3A /* Onboarding.swift */; };
-		F32886D92EBE1CAB00543D3A /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886D42EBE1CAB00543D3A /* TopView.swift */; };
 		F32886DE2EBE1CEE00543D3A /* PreviewSmoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886DC2EBE1CEE00543D3A /* PreviewSmoke.swift */; };
 		F32886F32EBFC69D00543D3A /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = F32886F02EBFC69D00543D3A /* chat.png */; };
 		F32886F42EBFC69E00543D3A /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = F32886F12EBFC69D00543D3A /* Contents.json */; };
@@ -38,6 +37,8 @@
 		F3997A992EC7152100495DB0 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A982EC7152100495DB0 /* Documents.swift */; };
 		F3997A9B2ECAFB1000495DB0 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A9A2ECAFB1000495DB0 /* Staff.swift */; };
 		F3997A9D2ECAFB1D00495DB0 /* Staffs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3997A9C2ECAFB1D00495DB0 /* Staffs.swift */; };
+		F39E62872ECC169D00D5A0F2 /* Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E62862ECC169C00D5A0F2 /* Others.swift */; };
+		F3DACCA82ECC25D30079286C /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32886D42EBE1CAB00543D3A /* TopView.swift */; };
 		F3ECE04B2EB0CAC400200E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		F3997A982EC7152100495DB0 /* Documents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
 		F3997A9A2ECAFB1000495DB0 /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		F3997A9C2ECAFB1D00495DB0 /* Staffs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staffs.swift; sourceTree = "<group>"; };
+		F39E62862ECC169C00D5A0F2 /* Others.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Others.swift; sourceTree = "<group>"; };
 		F3ECE04A2EB0CAC400200E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 		F32886D52EBE1CAB00543D3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F39E62862ECC169C00D5A0F2 /* Others.swift */,
 				F3997A942EC7150200495DB0 /* DocumentList.swift */,
 				F3997A922EC230C300495DB0 /* InquiryMessageList.swift */,
 				F3997A902EC1C97300495DB0 /* ChatTopicList.swift */,
@@ -283,7 +286,6 @@
 				F3997A8B2EC1C22100495DB0 /* Activity.swift in Sources */,
 				F32886D82EBE1CAB00543D3A /* Onboarding.swift in Sources */,
 				F34FF5E52EB0B57B00F0A394 /* oma_prototypeApp.swift in Sources */,
-				F32886D92EBE1CAB00543D3A /* TopView.swift in Sources */,
 				F32887012EC1659A00543D3A /* InquiryTopic.swift in Sources */,
 				F3997A8D2EC1C77900495DB0 /* ChatTopic.swift in Sources */,
 				F3997A932EC230C400495DB0 /* InquiryMessageList.swift in Sources */,
@@ -291,10 +293,12 @@
 				F32887042EC165BC00543D3A /* InquiryTopics.swift in Sources */,
 				F32887142EC1A0DF00543D3A /* Colors.swift in Sources */,
 				F328871E2EC1AF3E00543D3A /* InquiryContactList.swift in Sources */,
+				F3DACCA82ECC25D30079286C /* TopView.swift in Sources */,
 				F328871A2EC1AC2300543D3A /* InquiryContacts.swift in Sources */,
 				F3997A8F2EC1C7F400495DB0 /* ChatTopics.swift in Sources */,
 				F32886FA2EC0180F00543D3A /* ActivityList.swift in Sources */,
 				F32887002EC1659900543D3A /* InquiryMessage.swift in Sources */,
+				F39E62872ECC169D00D5A0F2 /* Others.swift in Sources */,
 				F32887202EC1AFB900543D3A /* InquiryTopicList.swift in Sources */,
 				F3997A972EC7151100495DB0 /* Document.swift in Sources */,
 				F3997A912EC1C97400495DB0 /* ChatTopicList.swift in Sources */,
