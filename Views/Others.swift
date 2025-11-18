@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Others: View {
-    @Environment(\.dismiss) var dismiss
-    @State private var navigationPath = NavigationPath()
+    @Binding var navigationPath: NavigationPath
     
     let menuItems = [
         "書類",
@@ -24,96 +23,100 @@ struct Others: View {
     ]
     
     var body: some View {
-        NavigationStack(path: $navigationPath) {
-            VStack(spacing: 0) {
-                // ヘッダー
-                HStack {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
-                            .font(.system(size: 18, weight: .medium))
+        VStack(spacing: 0) {
+            // ヘッダー
+            HStack {
+                Button(action: {
+                    if !navigationPath.isEmpty {
+                        navigationPath.removeLast()
                     }
-                    .padding(.leading, 16)
-                    
-                    Spacer()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.black)
+                        .font(.system(size: 18, weight: .medium))
                 }
-                .padding(.top, 8)
-                .padding(.bottom, 16)
-                .background(Color.white)
+                .padding(.leading, 16)
                 
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 0) {
-                        // タイトル
-                        Text("その他")
-                            .font(.system(size: 28, weight: .bold))
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 16)
-                            .padding(.bottom, 16)
-                        
-                        // 説明文
-                        Text("各種設定の変更・書類の管理ができます。")
-                            .font(.system(size: 14))
-                            .foregroundColor(.gray)
-                            .padding(.horizontal, 16)
-                            .padding(.bottom, 24)
-                        
-                        // 一番目のメニューの上の罫線
-                        Divider()
-                            .padding(.leading, 16)
-                        
-                        // メニュー項目
-                        ForEach(menuItems, id: \.self) { item in
-                            Button(action: {
-                                if item == "書類" {
-                                    navigationPath.append("DocumentList")
-                                }
-                            }) {
-                                HStack {
-                                    Text(item)
-                                        .font(.system(size: 16))
-                                        .foregroundColor(.black)
-                                    
-                                    Spacer()
-                                    
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.gray)
-                                        .font(.system(size: 14))
-                                }
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 16)
-                            }
-                            .background(Color.white)
-                            
-                            Divider()
-                                .padding(.leading, 16)
-                        }
-                        
-                        // 最後のメニュー項目の下の罫線
-                        Divider()
-                            .padding(.leading, 16)
-                    }
-                    .background(Color.white)
-                }
-                .background(Color.white)
-                
-                // 画面の下まで表示するための余白
                 Spacer()
-                    .background(Color.white)
+            }
+            .padding(.top, 8)
+            .padding(.bottom, 16)
+            .background(Color.white)
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    // タイトル
+                    Text("その他")
+                        .font(.system(size: 28, weight: .bold))
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 16)
+                    
+                    // 説明文
+                    Text("各種設定の変更・書類の管理ができます。")
+                        .font(.system(size: 14))
+                        .foregroundColor(.gray)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 24)
+                    
+                    // 一番目のメニューの上の罫線
+                    Divider()
+                        .padding(.leading, 16)
+                    
+                    // メニュー項目
+                    ForEach(menuItems, id: \.self) { item in
+                        Button(action: {
+                            if item == "書類" {
+                                navigationPath.append("DocumentList")
+                            }
+                        }) {
+                            HStack {
+                                Text(item)
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.black)
+                                
+                                Spacer()
+                                
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 14))
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 16)
+                        }
+                        .background(Color.white)
+                        
+                        Divider()
+                            .padding(.leading, 16)
+                    }
+                    
+                    // 最後のメニュー項目の下の罫線
+                    Divider()
+                        .padding(.leading, 16)
+                }
+                .background(Color.white)
             }
             .background(Color.white)
-            .navigationBarBackButtonHidden(true)
-            .navigationDestination(for: String.self) { destination in
-                if destination == "DocumentList" {
-                    DocumentListView(navigationPath: $navigationPath)
-                }
-            }
+            
+            // 画面の下まで表示するための余白
+            Spacer()
+                .background(Color.white)
         }
+        .background(Color.white)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    Others()
+    struct PreviewWrapper: View {
+        @State private var navigationPath = NavigationPath()
+        
+        var body: some View {
+            NavigationStack(path: $navigationPath) {
+                Others(navigationPath: $navigationPath)
+            }
+        }
+    }
+    return PreviewWrapper()
 }
 

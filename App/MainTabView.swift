@@ -16,7 +16,7 @@ struct MainTabView: View {
             Group {
                 switch selectedTab {
                 case 0:
-                    TopViewContent()
+                    TopView()
                 case 1:
                     ChatTopicsContent()
                 case 2:
@@ -26,21 +26,10 @@ struct MainTabView: View {
                 case 4:
                     NotificationContent()
                 default:
-                    TopViewContent()
+                    TopView()
                 }
             }
         }
-    }
-}
-
-// 各タブのコンテンツを分離
-struct TopViewContent: View {
-    var body: some View {
-        Spacer()
-        Text("トップ画面")
-            .font(.title)
-            .padding()
-        Spacer()
     }
 }
 

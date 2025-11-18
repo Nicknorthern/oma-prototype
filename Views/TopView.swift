@@ -8,49 +8,60 @@
 import SwiftUI
 
 struct TopView: View {
-    @State private var selectedTab = 0
-    @State private var hideTabBar = false
-    @State private var showOthersView = false
+    @State private var navigationPath = NavigationPath()
     
     var body: some View {
-        TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
-            NavigationStack {
-                VStack(spacing: 0) {
-                    // ヘッダー
-                    HStack {
-                        Spacer()
-                        Text("保有物件")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.white)
-                        Spacer()
-                        Button(action: {
-                            showOthersView = true
-                        }) {
-                            Image(systemName: "gearshape")
-                                .foregroundColor(.white)
-                                .font(.system(size: 20))
-                        }
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(Color.black)
-                    .frame(maxWidth: .infinity)
-                    
-                    // メインコンテンツエリア
+        NavigationStack(path: $navigationPath) {
+            VStack(spacing: 0) {
+                // ヘッダー
+                HStack {
                     Spacer()
+                    Text("保有物件")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.white)
+                    Spacer()
+                    Button(action: {
+                        navigationPath.append("Others")
+                    }) {
+                        Image(systemName: "gearshape")
+                            .foregroundColor(.white)
+                            .font(.system(size: 20))
+                    }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .navigationDestination(isPresented: $showOthersView) {
-                    Others()
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .background(Color.black)
+                .frame(maxWidth: .infinity)
+                
+                // メインコンテンツエリア
+                Spacer()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .navigationBarBackButtonHidden(true)
+            .navigationDestination(for: String.self) { destination in
+                switch destination {
+                case "Others":
+                    Others(navigationPath: $navigationPath)
+                case "DocumentList":
+                    DocumentListView(navigationPath: $navigationPath)
+                default:
+                    EmptyView()
                 }
             }
-        }
-        .onAppear {
-            hideTabBar = false
         }
     }
 }
 
 #Preview {
-    TopView()
+    struct PreviewWrapper: View {
+        @State private var selectedTab = 0
+        @State private var hideTabBar = false
+        
+        var body: some View {
+            TabBarContainerView(selectedTab: $selectedTab, hideTabBar: $hideTabBar) {
+                TopView()
+            }
+        }
+    }
+    return PreviewWrapper()
 }
